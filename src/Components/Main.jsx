@@ -63,13 +63,17 @@ const Main=()=> {
         searchPokemon();
     }
 
+    const clickDetail = (e) => {
+        setPokemon(e);
+    }
+
     return(
         <div className="header">
             <Search handleChange={handleChange} handleSubmit={handleSubmit}/>
             {pokemonType ? 
                 <Details pokeDex={pokeDex} pokeData={pokeData} 
                             loading={loading} setPokeDex={setPokeDex} prevUrl={prevUrl}
-                            setPokeData={setPokeData} nextUrl={nextUrl}
+                            setPokeData={setPokeData} nextUrl={nextUrl} clickDetail={clickDetail} handleSubmit={handleSubmit}
                             setUrl={setUrl} setPokeDatas={setPokeData} infoPokemon={poke=>setPokeDex(poke)}/>
             :(
                 <HomePage pokeDex={pokeDex} pokeData={pokeData} 
